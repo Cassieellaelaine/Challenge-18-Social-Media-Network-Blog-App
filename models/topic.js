@@ -1,17 +1,17 @@
 const { Schema, Types } = require('mongoose');
 
-const assignmentSchema = new Schema(
+const topicSchema = new Schema(
   {
-    assignmentId: {
+    topicId: {
       type: Schema.Types.ObjectId,
       default: () => new Types.ObjectId(),
     },
-    assignmentName: {
+    topicName: {
       type: String,
       required: true,
       maxlength: 50,
       minlength: 4,
-      default: 'Unnamed assignment',
+      default: 'Unnamed topic',
     },
     score: {
       type: Number,
@@ -31,4 +31,4 @@ const assignmentSchema = new Schema(
   }
 );
 
-module.exports = assignmentSchema;
+module.exports = topicSchema;

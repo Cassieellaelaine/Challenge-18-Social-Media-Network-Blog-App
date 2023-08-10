@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
 
-const courseSchema = new Schema(
+const postSchema = new Schema(
   {
-    courseName: {
+    postName: {
       type: String,
       required: true,
     },
@@ -18,10 +18,10 @@ const courseSchema = new Schema(
       type: Date,
       default: () => new Date(+new Date() + 84 * 24 * 60 * 60 * 1000),
     },
-    students: [
+    bloggers: [
       {
         type: Schema.Types.ObjectId,
-        ref: 'Student',
+        ref: 'Blogger',
       },
     ],
   },
@@ -33,6 +33,6 @@ const courseSchema = new Schema(
   }
 );
 
-const Course = model('course', courseSchema);
+const Post = model('post', postSchema);
 
-module.exports = Course;
+module.exports = Post;

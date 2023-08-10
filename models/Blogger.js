@@ -1,8 +1,8 @@
 const { Schema, model } = require('mongoose');
-const assignmentSchema = require('./Assignment');
+const topicSchema = require('./topic');
 
-// Schema to create Student model
-const studentSchema = new Schema(
+// Schema to create Blogger model
+const bloggerSchema = new Schema(
   {
     first: {
       type: String,
@@ -19,7 +19,7 @@ const studentSchema = new Schema(
       required: true,
       max_length: 50,
     },
-    assignments: [assignmentSchema],
+    topics: [topicSchema],
   },
   {
     toJSON: {
@@ -28,6 +28,6 @@ const studentSchema = new Schema(
   }
 );
 
-const Student = model('student', studentSchema);
+const Blogger = model('blogger', bloggerSchema);
 
-module.exports = Student;
+module.exports = Blogger;
